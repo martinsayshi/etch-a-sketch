@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.container {
+    border: 3px solid gold;
+    width: 800px;
+    height: 800px;
+}
+
+.square {
+    border: 0.5px solid black;
+    flex: 1;
+}
+
+.row {
+    display: flex;
+}
+
+
