@@ -1,9 +1,25 @@
 const container = document.querySelector(".container");
-let rows = 30;
+const clear = document.querySelector("#clear");
+const rainbow = document.querySelector("#rainbow");
+
+const COLORS = ["#FF6D60","#F7D060", "#F3E99F", "#98D8AA", "#B2A4FF", "#89CFFD"];
+
+let rows = 4;
 let dimensions = 800 / rows;
 
+function getRandomInteger(min, max) {
+    // Returns a random number with min included and max excluded
+    return Math.floor(Math.random() * (max - min) + min);
+}
+
 function color(event) {
-    event.target.style.background = "green";
+    // Generates new color if rainbow class is active
+    if (rainbow.classList.contains("active")) {
+        let randomColor = getRandomInteger(0, COLORS.length);
+        event.target.style.background = `${COLORS[randomColor]}`;
+    } else {
+        event.target.style.background = "black";
+    }
 }
 
 for (let i= 0; i < rows; i++) {
@@ -18,8 +34,12 @@ for (let i= 0; i < rows; i++) {
     container.appendChild(row);
 }
 
-const elements = document.querySelectorAll(".square")
+const elements = Array.from(document.querySelectorAll(".square"));
 
-Array.from(elements).forEach(element => element.addEventListener('mouseleave', color));
+elements.forEach(element => element.addEventListener('mouseleave', color));
+
+clear.addEventListener('click', () => {
+    elements.forEach(element => element.style.background = "white");
+});
 
 
