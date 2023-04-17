@@ -4,13 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="css/style.css">
     <script src="script.js" defer></script>
     <title>Sketchpad</title>
 </head>
 <body>
-    <div class="container"></div>
-    <button class="btn" id="clear">Clear</button>
-    <button class="btn active" id="rainbow">Rainbow</button>
+    <section class="header">
+        <h1>Etch-a-sketch</h1>
+        <p>Draw anything you want!</p>
+    </section>
+    <section class="sketch">
+        <div class="container"></div>
+        <div class="menu">
+            <button class="btn" id="lines">Show Lines</button>
+            <button class="btn" id="clear">Clear</button>
+            <button class="btn" id="rainbow">Rainbow</button>
+            <div class="dimensions">
+                <p id="dimensions"></p>
+                <input id="size" type="range" value="16" min="2" max="64";
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <p>Copyright &copy; <span id="year"></span> martinsayshi</p> <a href="https://github.com/martinsayshi" target="_blank"><img src="img/github-mark.svg" alt="github link" class="footer-img"/></a>
+    </footer>
 </body>
 </html>
